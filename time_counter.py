@@ -3,9 +3,7 @@ import win32api
 import time
 import winsound
 
-
 filename  =  "c.wav"
-
 keypress = False
 
 def Next_num(list,index,Bool = False):
@@ -54,7 +52,6 @@ def capture_key():
             print("W Pressed")
             keypress = True
         time.sleep(0.1)
-
 #Main
 if modeInput() == -1:
     time_inp = input("Δώσε χρόνο:")
@@ -100,4 +97,3 @@ else:
         time_inp = int(formatDate(timel))
         print(formatDate(timel,":"))
         winsound.PlaySound(filename, winsound.SND_FILENAME)
-    #print(time_inp)
