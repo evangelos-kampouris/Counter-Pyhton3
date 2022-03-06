@@ -49,14 +49,14 @@ def capture_key():
     while not keypress:
         a = win32api.GetKeyState(0x57)
         if a < 0:
-            print("W Pressed")
+            print("Stopped")
             keypress = True
         time.sleep(0.1)
 #Main
 if modeInput() == -1:
     time_inp = input("Δώσε χρόνο:")
     timel,timex = unformatDate(time_inp)
-    print(time_inp)
+    print(time_inp , end = '\r')
     time.sleep(1)
     winsound.PlaySound(filename, winsound.SND_FILENAME)
     while not countEnded(time_inp):
@@ -72,11 +72,11 @@ if modeInput() == -1:
                     timel[2] = 59
         time_inp = int(formatDate(timel))
         time_print = formatDate(timel,":")
-        print(time_print)
+        print(time_print,end = '\r')
         winsound.PlaySound(filename, winsound.SND_FILENAME)
 else:
     time_inp = "00:00:00"
-    print(time_inp)
+    print(time_inp ,end = '\r')
     time.sleep(1)
     winsound.PlaySound(filename, winsound.SND_FILENAME)
     timel,timex = unformatDate(time_inp)
@@ -95,5 +95,5 @@ else:
                     timel[1] = 0
                     timel[2] += 1
         time_inp = int(formatDate(timel))
-        print(formatDate(timel,":"))
+        print(formatDate(timel,":"),end = '\r')
         winsound.PlaySound(filename, winsound.SND_FILENAME)
