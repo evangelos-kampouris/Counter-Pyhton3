@@ -3,11 +3,6 @@ import Time_counter_revisited_functions as func
 import threading
         
 
-#Main
-
-#mutex
-
-
 clock = func.CounterThread()
 clock.setRun()
 
